@@ -8,11 +8,7 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-<<<<<<< HEAD
-    "deploy": "gh-pages -d dist -b gh-pages -r https://x-access-token:$GH_TOKEN@github.com/vinit052/vite-project.git"
-=======
-    "deploy": "gh-pages -d dist -r https://x-access-token:$GH_TOKEN@github.com/vinit052/vite-project.git -b gh-pages -t"
->>>>>>> adf67e96112eab136f404024ed2b4b0b01483945
+    "deploy": "gh-pages -d dist -b gh-pages"
   },
   "dependencies": {
     "react": "^19.2.0",
