@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "gh-pages -d dist -b gh-pages -r https://x-access-token:$GH_TOKEN@github.com/vinit052/vite-project.git"
   },
   "dependencies": {
     "react": "^19.2.0",
