@@ -19,6 +19,10 @@ jobs:                              # key-value
         run: npm install
       - name: Build
         run: npm run build
+      - name: Set Git identity
+        run: |
+          git config --global user.name "Vinit Ower"
+          git config --global user.email "vinit.official30@gmail.com"
       - name: Deploy
         run: npm run deploy
         env:
