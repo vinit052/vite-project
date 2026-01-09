@@ -1,31 +1,35 @@
-name: Deploy Vite App to GitHub Pages  # key-value, no dash
+name: Deploy Vite App to GitHub Pages
 
 on:
-  push:                            # key-value
-    branches:                       # key-value
-      - main                        # dash → this is a list item
+  push:
+    branches:
+      - main
 
-jobs:                              # key-value
-  build-deploy:                     # key = job id
-    runs-on: ubuntu-latest          # key-value
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
 
-    steps:                          # key-value
-      - uses: actions/checkout@v3  # dash → each step is a list item
-      - name: Use Node.js 20       # dash → new step
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Use Node.js 20
         uses: actions/setup-node@v3
         with:
-          node-version: '20'       # key-value under 'with'
+          node-version: '20'
+
       - name: Install dependencies
         run: npm install
-      - name: Build
+
+      - name: Build project
         run: npm run build
+
       - name: Set Git identity
         run: |
-          git config --global user.name "Vinit Ower"
-          git config --global user.email "vinit.official30@gmail.com"
-      - name: Deploy
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+
+      - name: Deploy to GitHub Pages
         run: npm run deploy
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-
